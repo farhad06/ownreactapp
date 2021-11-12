@@ -1,5 +1,6 @@
 import React from "react";
 import Reactdom from "react-dom";
+import Car from "./reactprops";
 // start example of JSX and Rendaring
 // simple jsx
 const element = <h1>Hello Jsx </h1>;
@@ -47,9 +48,6 @@ class Clock extends React.Component {
   render() {
     // console.log(this.props);
     const { locale, children } = this.props;
-    // const { text } = this.children;
-    // console.log(text);
-    // const { value } = this.props.children;
     return (
       <div>
         <h1>Murshidabad</h1>
@@ -65,3 +63,6 @@ Reactdom.render(
   <Clock locale="bn-BD">time</Clock>,
   document.getElementById("root")
 );
+// run imported page element
+const ownelement = <Car brand="Audi" />;
+Reactdom.render(ownelement, document.getElementById("root"));
