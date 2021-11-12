@@ -43,4 +43,15 @@ function Timeset({ local }) {
 Reactdom.render(<Timeset local="bn-BD" />, document.getElementById("root"));
 /* In a function the total function is called react component and return parts is called element */
 // class component
-
+class Clock extends React.Component {
+  render() {
+    const { locale } = this.props;
+    return (
+      <div>
+        <h1>Murshidabad</h1>
+        <h2>Local Time is: {new Date().toLocaleTimeString(locale)}</h2>
+      </div>
+    );
+  }
+}
+Reactdom.render(<Clock locale="bn-BD" />, document.getElementById("root"));
