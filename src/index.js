@@ -46,12 +46,19 @@ Reactdom.render(<Timeset local="bn-BD" />, document.getElementById("root"));
 class Clock extends React.Component {
   render() {
     const { locale } = this.props;
+    // const { value } = this.props.children;
     return (
       <div>
         <h1>Murshidabad</h1>
-        <h2>Local Time is: {new Date().toLocaleTimeString(locale)}</h2>
+        <h2>
+          Local time is: 
+          {new Date().toLocaleTimeString(locale)}
+        </h2>
       </div>
     );
   }
 }
-Reactdom.render(<Clock locale="bn-BD" />, document.getElementById("root"));
+Reactdom.render(
+  <Clock locale="bn-BD">time</Clock>,
+  document.getElementById("root")
+);
