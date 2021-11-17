@@ -3,7 +3,7 @@ import React from "react";
 class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { date: new Date() };
+    this.state = { date: new Date(), locale: "bn-BD" };
   }
 
   componentDidMount() {
@@ -16,9 +16,11 @@ class Clock extends React.Component {
     clearInterval(this.clockTimer);
   }
 
-  handleClick() {
-    console.log("This button was clicked");
-  }
+  handleClick = () => {
+    this.setState({
+      locale: "en-US",
+    });
+  };
 
   tick() {
     this.setState({
@@ -28,13 +30,15 @@ class Clock extends React.Component {
 
   render() {
     // console.log(this.props);
-    const { locale } = this.props;
-    const { date } = this.state;
+    // const { locale } = this.props;
+    const { date, locale } = this.state;
     return (
       <div>
         <h1>Murshidabad</h1>
         <h2>Local time is: {date.toLocaleTimeString(locale)}</h2>
-        <button type="button" onClick={this.handleClick} >Click Here</button>
+        <button type="button" onClick={this.handleClick}>
+          Click Here
+        </button>
       </div>
     );
   }
