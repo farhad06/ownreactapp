@@ -16,6 +16,10 @@ class Clock extends React.Component {
     clearInterval(this.clockTimer);
   }
 
+  handleClick() {
+    console.log("This button was clicked");
+  }
+
   tick() {
     this.setState({
       date: new Date(),
@@ -30,6 +34,7 @@ class Clock extends React.Component {
       <div>
         <h1>Murshidabad</h1>
         <h2>Local time is: {date.toLocaleTimeString(locale)}</h2>
+        <button type="button" onClick={this.handleClick} >Click Here</button>
       </div>
     );
   }
